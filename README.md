@@ -4,6 +4,9 @@
 # Project Goal:
 Build Something Awesome
 
+### Project URL
+[view project-sinoper](https://mediaduk.github.io/project-sinoper/) (https://mediaduk.github.io/project-sinoper/)
+
 # Requirements:
 1. Must uses at least two APIs
 2. Must use AJAX to pull data
@@ -22,7 +25,7 @@ Build Something Awesome
 2. [Markdown-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 
-#### How to create new branch
+### How to create new branch
 [user@machine/~/project-sinoper]
 $ git checkout -b [firstname-001]
 ```
