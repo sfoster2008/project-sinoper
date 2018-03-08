@@ -25,7 +25,30 @@ Build Something Awesome
 2. [Markdown-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 
-### How to create new branch
-[user@machine/~/project-sinoper]
-$ git checkout -b [firstname-001]
-```
+# Forking/Merging Instructions
+
+1. fork, then clone repository
+2. git remote -v (checks connection)
+    A. need to connect to master repo:
+        git remote add upstream (url to repo)
+    B. check the new connection is there
+        git remote -v
+3. create a new branch
+        git branch branchName
+4. switch to your branch
+        git checkout branchName
+5. make changes
+6. Add/Commit Changes
+        git add -A (or git add fileName (for specific files))
+        git commit -m "comments"
+7. switch to master branch
+        git checkout master
+8. Merge
+        git merge branchName
+        git push origin master
+9. Create Pull Request
+        this is done in github
+10. gitmaster then merges on their end (in github)
+11. get changes that have been merged
+        git fetch upstream
+        git merge upstream/master
