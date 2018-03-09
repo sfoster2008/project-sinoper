@@ -39,7 +39,7 @@ Build Something Awesome
 [user@machine/~/project-sinoper]
 $ git checkout -b [firstname-001]
 ```
-
+.
 
 
 =======
