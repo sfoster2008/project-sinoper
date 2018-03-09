@@ -21,11 +21,23 @@ Build Something Awesome
 
 # Learning Resources
 1. [official git docs](https://git-scm.com/doc)
-
 2. [Markdown-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+3. https://www.tutorialspoint.com/git/git_environment.htm
+4. https://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html
+5. https://www.udacity.com/course/github-collaboration--ud456
+6. https://www.udacity.com/course/how-to-use-git-and-github--ud775
 
+# API Resources
+1. https://www.creativebloq.com/web-design/apis-developers-need-know-121518469
+2. https://mashable.com/category/apis/
+3. https://www.instagram.com/developer/
+4. https://www.keycdn.com/blog/front-end-frameworks/
+5. https://css-tricks.com/snippets/css/complete-guide-grid/
 
 ### How to create new branch
 [user@machine/~/project-sinoper]
 $ git checkout -b [firstname-001]
 ```
+
+
+
