@@ -39,8 +39,8 @@ Build Something Awesome
 [user@machine/~/project-sinoper]
 $ git checkout -b [firstname-001]
 ```
-# Forking/Merging Instructions
 
+# Forking/Merging Instructions
 1. fork, then clone repository
 2. git remote -v (checks connection)
     1. need to connect to master repo:
