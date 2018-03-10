@@ -6,6 +6,8 @@
 
 body {
   padding-top: 54px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #e6e6e6;
 }
 
 @media (min-width: 992px) {
@@ -26,4 +28,16 @@ body {
 
 .card {
   height: 100%;
+}
+
+.output {
+  /* height: 300px; */
+  margin: 0;
+}
+
+
+
+.eventImage {
+  display: inline-block;
+  width: 100%;
 }
