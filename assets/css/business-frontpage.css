@@ -8,6 +8,9 @@ body {
   padding-top: 54px;
   font-family: 'Montserrat', sans-serif;
   background-color: #e6e6e6;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 992px) {
@@ -39,5 +42,11 @@ body {
 
 .eventImage {
   display: inline-block;
+  width: 100%;
+}
+
+
+#responsive-gmap {
+  height: 400px;
   width: 100%;
 }
