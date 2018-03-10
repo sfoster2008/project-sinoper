@@ -13,6 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -32,39 +33,42 @@
 
     <!-- Header with Background Image -->
     <header class="business-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="display-3 text-center text-white mt-4">Event Planner</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="text-center text-white mt-4">Enter the information below to begin building your itinerary!</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-sm-12 col-md-8">
-                    <form class="form-inline">
-                        <input type="text" class="form-control mb-1 mr-sm-1 mb-sm-0" id="location" placeholder="City">
 
-                        <!-- <select class="form-control mb-1 mr-sm-1 mb-sm-0" id="selectType">
-                <option value="">Type</option>
-                <option>Lodging</option>
-                <option>Restaurants</option>
-                <option>Other</option>
-              </select> -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="display-3 text-center text-white mt-4">Event Planner</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="text-center text-white mt-4">Enter the information below to begin building your itinerary!</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-sm-12 col-md-10">
+            <form class="form-inline">
+              <input type="text" class="form-control mb-1 mr-sm-1 mb-sm-0" id="location" placeholder="City">
+              
+              <select class="form-control mb-1 mr-sm-1 mb-sm-0" id="radius">
+                <option value="">Radius (mi)</option>
+                <option>20</option>
+                <option>40</option>
+                <option>60</option>
+              </select>
+
 
                         <input class="form-control mb-1 mr-sm-1 mb-sm-0" id="datePicker" data-value="2015/04/20" placeholder="Start Date">
 
                         <input class="form-control mb-1 mr-sm-1 mb-sm-0" id="datePicker" data-value="2015/04/20" placeholder="End Date">
 
-                        <button type="button" class="btn btn-primary form-control mb-1 mr-sm-1 mb-sm-0">Let's Go!</button>
-                    </form>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
+
+              <button type="button" class="btn btn-primary form-control mb-1 mr-sm-1 mb-sm-0">Let's Go!</button>
+            </form>
+          </div>
+          <div class="col-md-1"></div>
+
         </div>
     </header>
 
@@ -76,24 +80,38 @@
 <div id="responsive-gmap"></div>
         </div>
 
-        <div class="row output">
-            <div class="col-sm-8">
-                <div class="image">
-                    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F40967174%2F140232393130%2F1%2Foriginal.jpg?w=800&rect=0%2C64%2C4000%2C2000&s=034562b724cc7523d5ea3ef583d2f63c"
-                        alt="image" class="eventImage">
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title eventName">Event Name</h4>
-                            <p class="dateTime">Date and Time</p>
-                            <p class="location">Location</p>
-                            <button type="button" class="btn btn-danger">X</button>
-                        </div>
-                    </div>
-                </div>
+
+      <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12 col-lg-8" id="left"></div>
+              <div class="col-sm-12 col-lg-4" id="right">
+                <h4 class="card-title eventName">Event Name</h4>
+                <p class="dateTime">Date and Time</p>
+                <p class="location">Location</p>
+                <button type="button" class="btn btn-danger">X</button>
+              </div>
             </div>
+            </div>
+      <!-- <div class="container-fluid">
+      <div class="row output">
+        <div class="col-sm-12 col-lg-8" id="left"></div>
+            <!-- <div class="image">
+        <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F40967174%2F140232393130%2F1%2Foriginal.jpg?w=800&rect=0%2C64%2C4000%2C2000&s=034562b724cc7523d5ea3ef583d2f63c" alt="image" class="eventImage">
+        </div> -->
+        <!-- <div class="col-sm-12 col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title eventName">Event Name</h4>
+              <p class="dateTime">Date and Time</p>
+              <p class="location">Location</p>
+              <button type="button" class="btn btn-danger">X</button>
+            </div>
+          </div>
         </div>
+        </div>
+        </div> -->
+    </div>
+
     </div>
 
     </div>
