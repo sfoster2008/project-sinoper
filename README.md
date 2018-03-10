@@ -41,7 +41,6 @@ $ git checkout -b [firstname-001]
 ```
 
 
-
 =======
 # Forking/Merging Instructions
 
