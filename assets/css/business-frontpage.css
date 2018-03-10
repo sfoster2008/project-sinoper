@@ -8,6 +8,9 @@ body {
   padding-top: 54px;
   font-family: 'Montserrat', sans-serif;
   background-color: #e6e6e6;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 992px) {
@@ -45,11 +48,16 @@ body {
   height: 300px;
 }
 #right {
-background-color:white;
+background-color: #fff;
 height: 300px;
 padding: 20px;
 }
 
-/* .card {
-  height: 100%;
-} */
+
+
+
+#responsive-gmap {
+  height: 400px;
+  width: 100%;
+}
+

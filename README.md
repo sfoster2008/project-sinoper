@@ -34,16 +34,12 @@ Build Something Awesome
 4. https://www.keycdn.com/blog/front-end-frameworks/
 5. https://css-tricks.com/snippets/css/complete-guide-grid/
 
-<<<<<<< HEAD
 ### How to create new branch
+```
 [user@machine/~/project-sinoper]
 $ git checkout -b [firstname-001]
 ```
-
-
-=======
 # Forking/Merging Instructions
-
 1. fork, then clone repository
 2. git remote -v (checks connection)
     1. need to connect to master repo:
@@ -69,4 +65,3 @@ $ git checkout -b [firstname-001]
 11. get changes that have been merged
     1. git fetch upstream
     2. git merge upstream/master
->>>>>>> caf4b63c32f58411a83d8675b84294b0939c5a54
