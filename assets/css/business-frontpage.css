@@ -26,18 +26,30 @@ body {
   -o-background-size: cover;
 }
 
-.card {
+/* #right {
+  height: 300px;
+}
+
+#left {
+  background: url('https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F40967174%2F140232393130%2F1%2Foriginal.jpg?w=800&rect=0%2C64%2C4000%2C2000&s=034562b724cc7523d5ea3ef583d2f63c');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+} */
+
+#left {
+  background: url('https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F40967174%2F140232393130%2F1%2Foriginal.jpg?w=800&rect=0%2C64%2C4000%2C2000&s=034562b724cc7523d5ea3ef583d2f63c');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+#right {
+background-color:white;
+height: 300px;
+padding: 20px;
+}
+
+/* .card {
   height: 100%;
-}
-
-.output {
-  /* height: 300px; */
-  margin: 0;
-}
-
-
-
-.eventImage {
-  display: inline-block;
-  width: 100%;
-}
+} */
