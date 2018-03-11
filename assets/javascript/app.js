@@ -84,6 +84,24 @@ $(document).ready(function () {
   initMap()
 
 
+  // init date picker ui from jquery ui
+  $("#startdate").datepicker({format:'yyyy-mm-dd'})
+  $("#enddate").datepicker({format:'yyyy-mm-dd'})
+  // attaching click event to submission button
+ $('#submitForm').on('click', function(e) {
+    //select the startdate element and initialize datepicker function
+e.preventDefault()
+console.log('submitting form')
+    var startUtcDate = moment.utc( $('#startdate').datepicker('getDate')).format()
+    console.log('startUtcDate ==== \n',startUtcDate)
+    var endUtcDate = moment.utc($('#enddate').datepicker('getDate')).format()
+    console.log('endUtcDate ====== \n',endUtcDate)
+
+ });
+
+
+
+
 
 
   // function makeMarke() {
