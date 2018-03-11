@@ -4,41 +4,44 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
  */
 
-body {
-  padding-top: 54px;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #e6e6e6;
+ body {
+  /* padding-top: 54px; */
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Josefin Sans', sans-serif;
+  /* background-color: #e6e6e6; */
+  background-color: black;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   body {
     padding-top: 56px;
   }
-}
+} */
 
 .business-header {
   /* height: 50vh; */
   min-height: 300px;
-  background: url('http://placehold.it/1920x400') center center no-repeat scroll;
+  background: url('../img/background.jpg') center center no-repeat scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
 
-/* #right {
-  height: 300px;
+.text-white {
+  text-shadow: 2px 1px black;
 }
 
-#left {
-  background: url('https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F40967174%2F140232393130%2F1%2Foriginal.jpg?w=800&rect=0%2C64%2C4000%2C2000&s=034562b724cc7523d5ea3ef583d2f63c');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 300px;
-} */
+#footerText {
+  text-shadow: none;
+}
+
+.text-black {
+  text-shadow: 1px .5px white;
+}
 
 #left {
   background: url('https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F40967174%2F140232393130%2F1%2Foriginal.jpg?w=800&rect=0%2C64%2C4000%2C2000&s=034562b724cc7523d5ea3ef583d2f63c');
@@ -53,11 +56,14 @@ height: 300px;
 padding: 20px;
 }
 
-
-
-
 #responsive-gmap {
   height: 400px;
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
+.container-fluid {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
