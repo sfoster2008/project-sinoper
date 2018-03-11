@@ -62,7 +62,7 @@ $(document).ready(function () {
           lng: position.coords.longitude
         };
         infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
+        infoWindow.setContent('You are here!!');
         infoWindow.open(map);
         map.setCenter(pos);
         map.setZoom(15)
@@ -75,23 +75,55 @@ $(document).ready(function () {
     }
   }
 
-  function makeMarker(eventFromAPI) {
-    var venueLatLng = {
-      lat: Number(eventFromAPI.venue.latitude),
-      lng: Number(eventFromAPI.venue.longitude)
-    }
-    var  m = new google.maps.Marker({
-      position: venueLatLng,
-      map: map,
-      title: eventFromAPI.venue_id
+  var geocoder = new google.maps.Geocoder();
+
+  function geocodeAddress(geocoder, resultsMap) {
+    var address = $('#location').val()
+    geocoder.geocode({
+      'address': address
+    }, function (results, status) {
+      if (status === 'OK') {
+        resultsMap.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location,
+          icon: 'assets/img/blue-dot-sm.png'
+        });
+        map.setZoom(14)
+
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
     });
-    return m
   }
 
 
 
+  function makeMarker(eventFromAPI, index) {
+    var venueLatLng = {
+      lat: Number(eventFromAPI.venue.latitude),
+      lng: Number(eventFromAPI.venue.longitude)
+    }
+    var m = new google.maps.Marker({
+      position: venueLatLng,
+      map: map,
+      title: eventFromAPI.venue_id
+    })
+    var imgSrc = eventFromAPI.logo.original.url;
+    var infoWindowContent = '<h6>' + eventFromAPI.name.text + '</h6>' +
+      '<img class="eventImg-thumb" src="' + imgSrc + '">'
+    var infowindow = new google.maps.InfoWindow({
+      content: infoWindowContent
+    });
+    m.addListener('click', function () {
+      infowindow.open(map, m);
+    });
+    return m
+  }
+
   function plotToGMap(obj) {
     var events = obj.events
+    // loop through each event from city searched
     for (var i = 0; i < events.length; i++) {
       var eventBriteMarker = makeMarker(events[i], i)
       eventBriteMarker.setMap(map);
@@ -106,9 +138,10 @@ $(document).ready(function () {
     $.ajax({
       'url': eventBriteEndPoint + query
     }).done(function (results) {
+      console.log(results)
       plotToGMap(results)
     })
-    map.setZoom(10)
+
   }
 
 
@@ -137,6 +170,7 @@ $(document).ready(function () {
     var radius = $('#radius').val()
     console.log('radius =====', radius)
     getEvents(location, radius, startUtcDate, endUtcDate)
+    geocodeAddress(geocoder, map)
   });
 
 
