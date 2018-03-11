@@ -29,13 +29,6 @@
 // text to accompany cost averages (just for fun)
 
 
-
-
-
-
-
-
-
 $(document).ready(function () {
   var map, infoWindow;
 
@@ -81,54 +74,77 @@ $(document).ready(function () {
       handleLocationError(false, infoWindow, map.getCenter());
     }
   }
-  initMap()
+
+
+
+  function makeMarker(eventFromAPI) {
+    console.log(eventFromAPI)
+    var venueLatLng = {
+      lat: Number(eventFromAPI.venue.latitude),
+      lng: Number(eventFromAPI.venue.longitude)
+    }
+    var m = new google.maps.Marker({
+      position: venueLatLng,
+      map: map,
+      title: eventFromAPI.venue_id
+    });
+    m.setMap(map);
+     
+  }
+  function plotToGMap(obj) {
+    var events = obj.events
+    for (var i = 0; i< events.length; i++) {
+      makeMarker(events[i], i)
+    }
+  }
+
+  function getEvents(city, miles, start, end) {
+    // ------------------------------- EVENT BRITE API ----------------------- //
+    var token = 'DCPCQE6ZICHZYLNHXZNI'
+    var eventBriteEndPoint = 'https://www.eventbriteapi.com/v3/events/search/'
+    var query = '?location.address=' + city + '&location.within=' + miles + 'mi&start_date.range_start=' + start + '&start_date.range_end=' + end + '&expand=venue&token=' + token
+    $.ajax({
+      'url': eventBriteEndPoint + query
+    }).done(function (results) {
+      plotToGMap(results)
+    })
+    map.setZoom(10)
+  }
+
+
+
+
 
 
   // init date picker ui from jquery ui
-  $("#startdate").datepicker({format:'yyyy-mm-dd'})
-  $("#enddate").datepicker({format:'yyyy-mm-dd'})
+  $("#startdate").datepicker({
+    format: 'yyyy-mm-dd'
+  })
+  $("#enddate").datepicker({
+    format: 'yyyy-mm-dd'
+  })
   // attaching click event to submission button
- $('#submitForm').on('click', function(e) {
+  $('#submitForm').on('click', function (e) {
     //select the startdate element and initialize datepicker function
-e.preventDefault()
-console.log('submitting form')
-    var startUtcDate = moment.utc( $('#startdate').datepicker('getDate')).format()
-    console.log('startUtcDate ==== \n',startUtcDate)
+    e.preventDefault()
+    console.log('submitting form')
+    var startUtcDate = moment.utc($('#startdate').datepicker('getDate')).format()
+    console.log('startUtcDate ==== \n', startUtcDate)
     var endUtcDate = moment.utc($('#enddate').datepicker('getDate')).format()
-    console.log('endUtcDate ====== \n',endUtcDate)
+    console.log('endUtcDate ====== \n', endUtcDate)
+    var location = $('#location').val()
+    console.log('location =====', location)
+    var radius = $('#radius').val()
+    console.log('radius =====', radius)
+    getEvents(location, radius, startUtcDate, endUtcDate)
+  });
 
- });
 
 
 
 
 
 
-  // function makeMarke() {
-
-  // }
-
-  // function plotToGMap(obj) {
-  //   var events = obj.events
-  //   for (var i = 0; events.length; i++) {
-  //     console.log(events[i])
-
-  //   }
-  // }
-
-  // function getEvents(city, miles, start, end) {
-  //   // ------------------------------- EVENT BRITE API ----------------------- //
-  //   var token = 'DCPCQE6ZICHZYLNHXZNI'
-  //   var eventBriteEndPoint = 'https://www.eventbriteapi.com/v3/events/search/'
-  //   var query = '?location.address=' + city + '&location.within=' + miles + 'mi&start_date.range_start=' + start + '&start_date.range_end=' + end + '&token=' + token
-  //   $.ajax({
-  //     'url': eventBriteEndPoint + query
-  //   }).done(function (results) {
-  //     LOCAL_LOCATIONS = results;
-  //     plotToGMap(LOCAL_LOCATIONS)
-  //   })
-
-  // }
-  // getEvents('irvine', '30', '2018-03-12T13%3A41%3A45Z', '2018-06-22T13%3A41%3A48Z')
-
+  // load google maps and plot geolocation of enduser's device (if available)
+  initMap()
 });
