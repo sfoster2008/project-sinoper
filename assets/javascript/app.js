@@ -75,26 +75,26 @@ $(document).ready(function () {
     }
   }
 
-
-
   function makeMarker(eventFromAPI) {
-    console.log(eventFromAPI)
     var venueLatLng = {
       lat: Number(eventFromAPI.venue.latitude),
       lng: Number(eventFromAPI.venue.longitude)
     }
-    var m = new google.maps.Marker({
+    var  m = new google.maps.Marker({
       position: venueLatLng,
       map: map,
       title: eventFromAPI.venue_id
     });
-    m.setMap(map);
-     
+    return m
   }
+
+
+
   function plotToGMap(obj) {
     var events = obj.events
-    for (var i = 0; i< events.length; i++) {
-      makeMarker(events[i], i)
+    for (var i = 0; i < events.length; i++) {
+      var eventBriteMarker = makeMarker(events[i], i)
+      eventBriteMarker.setMap(map);
     }
   }
 
