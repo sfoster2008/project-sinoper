@@ -35,9 +35,10 @@ Build Something Awesome
 5. https://css-tricks.com/snippets/css/complete-guide-grid/
 
 ### How to create new branch
+> how to create a branch and checkout in one line
 ```
 [user@machine/~/project-sinoper]
-$ git checkout -b [firstname-001]
+$ git checkout -b name-of-branch
 ```
 # Forking/Merging Instructions
 1. fork, then clone repository
