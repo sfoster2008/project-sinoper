@@ -26,14 +26,14 @@ $(".submitBtn").on( "click" , function ( ) {
   rowDiv.append(rightDiv)
         
   // Creating an element to have the Event Name displayed
-  var eventName = $("<h4>Event Name</h4>")
+  var eventName = $("<h4><a href='URL' target='_blank'>Event Name</a></h4>")
   // Displaying the Event Name
   rightDiv.append(eventName)
         
   // Creating an element to have the Organization displayed
-  var pOne = $("<p>Event Organizer</p>")
+  // var pOne = $("<p>Event Organizer</p>")
   // Displaying the Organization
-  rightDiv.append(pOne)
+  // rightDiv.append(pOne)
   
   // Creating an element to hold the time
   var pTwo = $("<p>Date & Time</p>")
@@ -47,9 +47,9 @@ $(".submitBtn").on( "click" , function ( ) {
 
   // Retrieving the URL for the price
   // Cost paragraph
-  var pFour = $("<p>Cost</p>")
+  // var pFour = $("<p>Cost</p>")
   // Appending the cost
-  rightDiv.append(pFour);
+  // rightDiv.append(pFour);
 
   var btnRemove = $("<button type='button' class='btn btn-danger'>Remove</button>")
   rightDiv.append(btnRemove)
@@ -59,3 +59,19 @@ $(".submitBtn").on( "click" , function ( ) {
     console.log("click")
   })
 })
+
+// Object Locations:
+
+// imgURL: events[i].logo.original.url
+
+// Event Name: events[i].name.text
+// URL for link to event: events[i].url
+
+// Scrap Organizer (Not in API Object except as ID #)
+
+// Date & Time: events[i].start.local
+// May need to format
+
+// Location: "+events[i].venue.address.address_1+", "+events[i].venue.address.address_2+", "+events[i].venue.address.city+", "+events[i].venue.address.region+", "+events[i].venue.address.postal_code+"
+
+// Scrap Cost (Not in API Object)
