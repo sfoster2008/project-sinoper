@@ -100,6 +100,7 @@ $(document).ready(function () {
 
 
   function makeMarker(eventFromAPI, index) {
+    // get lat and lng from event venues locaiton and assign to local vars
     var venueLatLng = {
       lat: Number(eventFromAPI.venue.latitude),
       lng: Number(eventFromAPI.venue.longitude)
@@ -107,15 +108,26 @@ $(document).ready(function () {
     var m = new google.maps.Marker({
       position: venueLatLng,
       map: map,
-      title: eventFromAPI.venue_id
+      venueIdFromAPI: eventFromAPI.venue_id
     })
     var imgSrc = eventFromAPI.logo.original.url;
     var infoWindowContent = '<h6>' + eventFromAPI.name.text + '</h6>' +
-      '<img class="eventImg-thumb" src="' + imgSrc + '">'
+      '<img  class="eventImg-thumb" src="' + imgSrc + '">' +
+      '<a target="_blank" href="'+eventFromAPI.url+'" role="button" class="btn btn-secondary btn-sm btn-visit">Visit Event Page</a>' +
+      '<a type="button" class="btn btn-primary  btn-sm btn-addToQue">Add </a>' +
+      '</p>';
+    // create infowindow for marker clicked
     var infowindow = new google.maps.InfoWindow({
       content: infoWindowContent
     });
+    // trying to figure out how to close any open infowindows except the one clicked
+    infowindow.checkIfOpen = function () {
+      console.log('$(this) inside infowindow.checkIfOpen ===', $(this))
+      var map = this.getMap();
+      return (map !== null && typeof map !== "undefined");
+    };
     m.addListener('click', function () {
+      console.log('event attached to maker ===========================', event)
       infowindow.open(map, m);
     });
     return m
@@ -176,6 +188,13 @@ $(document).ready(function () {
 
 
 
+
+// attach click handles for all event event buttons
+  $(document).on('click', '.btn-addToQue', function(event) {
+    event.preventDefault()
+    var imgInsideInfoWindow = $(this).closest('img.eventImg-thumb')
+    console.log(imgInsideInfoWindow)
+  });
 
 
 
