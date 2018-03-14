@@ -111,11 +111,9 @@ $(document).ready(function () {
       venueIdFromAPI: eventFromAPI.venue_id
     })
     var imgSrc = eventFromAPI.logo.original.url;
-    var infoWindowContent = '<h6>' + eventFromAPI.name.text + '</h6>' +
-      '<img  class="eventImg-thumb" src="' + imgSrc + '">' +
-      '<a target="_blank" href="'+eventFromAPI.url+'" role="button" class="btn btn-secondary btn-sm btn-visit">Visit Event Page</a>' +
-      '<a type="button" class="btn btn-primary  btn-sm btn-addToQue">Add </a>' +
-      '</p>';
+    var infoWindowContent = '<p class="text-center"><h6>' + eventFromAPI.name.text + '</h6></p>' +
+      '<p class="text-center"><img  class="eventImg-thumb" src="' + imgSrc + '"></p>' +
+      '<p class="text-center"><a target="_blank" href="'+eventFromAPI.url+'" role="button" class="btn btn-secondary btn-sm btn-visit text-white">Visit Event Page</a>  <a role="button" class="btn btn-secondary  btn-sm btn-addToQue text-white">Add to Queue</a></p>';
     // create infowindow for marker clicked
     var infowindow = new google.maps.InfoWindow({
       content: infoWindowContent
