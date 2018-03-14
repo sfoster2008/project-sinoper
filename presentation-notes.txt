@@ -1,0 +1,32 @@
+DESCRIPTION/CONCEPT
+Users can enter location, mileage range, and date range information to view upcoming Eventbrite events in their chosen area. The map markers can be clicked to display a pop-up containing event information, which can then be added to an Events Queue area below the map to display additional details.
+
+MOTIVATION
+The Eventbrite website does not include the ability to visualize multiple events on one map. This also allows a user to, in essence, save multiple events in which they may be interested without creating an Eventbrite account.
+
+
+DESIGN PROCESS
+We initially had a very different idea in mind. We envisioned a travel planner that would combine Yelp with Google Maps that would function much like what we built here. We had intended to allow users to build out individual days of their trips and to provide them with a "cost" estimate based on Yelp's dollar sign rating system. The Yelp API proved too difficult in the period of time we had, so we moved on to Eventbrite.
+
+Marcus had some previous experience with the Google Maps API and Steve was interested in learning it so they took lead on that piece. The date picker was not as easy it initially appeared, so Hung worked on that. Chris and I built out the front end and worked together on the javascript that dynamically writes the Events Queue HTML.
+
+TEAM EFFORTS
+Hung - date picker
+Veronica - scrum master
+Marcus - git master
+Marcus/Steve - Google Maps
+Chris/Veronica - dynamic HTML, front-end
+
+TECHNOLOGIES USED
+HTML/CSS/Boostrap
+Google Maps API
+Eventbrite API
+JavaScript/jQuery
+DatePicker jQuery library
+
+DEMONSTRATION
+
+FUTURE DEVELOPMENT
+Pull in the Yelp API. This would allow users to plan full days/weekends/trips. The Yelp API would provide access to hotels, restaurants, and other activities in the area.
+The ability to calculate cost estimate for a full itinerary and per day.
+The ability to generate a downloadable itinerary/save in-progress itineraries.
