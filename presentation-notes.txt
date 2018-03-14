@@ -1,0 +1,24 @@
+Description/Concept
+Users can enter location, mileage range, and date range information to view upcoming Eventbrite events in their chosen area. The map markers can be clicked to display a pop-up containing event information, which can then be added to an Events Queue area below the map to display additional details.
+
+Motivation
+The Eventbrite website does not include the ability to visualize multiple events on one map. This also allows a user to, in essence, save multiple events in which they may be interested without creating an Eventbrite account.
+
+Team Efforts
+Hung - date picker
+Veronica - scrum master
+Marcus - git master
+Marcus/Steve - Google Maps
+Chris/Veronica - dynamic HTML, front-end
+
+Design Process
+We initially had a much different
+
+Technologies Used
+HTML/CSS/Boostrap
+Google Maps API
+Eventbrite API
+JavaScript/jQuery
+
+inside make marker function
+info window content
