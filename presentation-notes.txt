@@ -16,6 +16,7 @@ Veronica - scrum master
 Marcus - git master
 Marcus/Steve - Google Maps
 Chris/Veronica - dynamic HTML, front-end
+Steve - QA/Coding Standards
 
 TECHNOLOGIES USED
 HTML/CSS/Boostrap
